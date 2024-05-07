@@ -40,6 +40,12 @@ namespace COMP003B._2024SP.LectureActivity7.Controllers
                 return NotFound();
             }
 
+            ViewBag.Courses = from s in _context.Students
+                              join e in _context.Enrollments on s.StudentId equals e.StudentId
+                              join c in _context.Courses on e.CourseId equals c.CourseId
+                              where s.StudentId == id
+                              select c;
+
             return View(student);
         }
 
