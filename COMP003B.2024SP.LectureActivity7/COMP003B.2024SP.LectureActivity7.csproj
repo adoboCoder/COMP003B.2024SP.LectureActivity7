@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>COMP003B._2024SP.LectureActivity7</RootNamespace>
+    <UserSecretsId>333f9666-46d1-41e6-94bd-e26eb89757a9</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
