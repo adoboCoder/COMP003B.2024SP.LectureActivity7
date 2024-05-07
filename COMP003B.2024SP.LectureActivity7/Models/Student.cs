@@ -15,5 +15,7 @@ namespace COMP003B._2024SP.LectureActivity7.Models
 
         // Collection navigation property
         public virtual ICollection<Enrollment>? Enrollments { get; set; }
+
+        public int Age { get; set; } // New property
     }
 }

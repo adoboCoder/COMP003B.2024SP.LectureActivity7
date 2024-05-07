@@ -40,12 +40,6 @@ namespace COMP003B._2024SP.LectureActivity7.Controllers
                 return NotFound();
             }
 
-            ViewBag.Courses = from s in _context.Students
-                              join e in _context.Enrollments on s.StudentId equals e.StudentId
-                              join c in _context.Courses on e.CourseId equals c.CourseId
-                              where s.StudentId == id
-                              select c;
-
             return View(student);
         }
 
@@ -60,7 +54,7 @@ namespace COMP003B._2024SP.LectureActivity7.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StudentId,Name,Email")] Student student)
+        public async Task<IActionResult> Create([Bind("StudentId,Name,Email,Age")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +86,7 @@ namespace COMP003B._2024SP.LectureActivity7.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StudentId,Name,Email")] Student student)
+        public async Task<IActionResult> Edit(int id, [Bind("StudentId,Name,Email,Age")] Student student)
         {
             if (id != student.StudentId)
             {
